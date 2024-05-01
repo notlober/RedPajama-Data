@@ -160,7 +160,7 @@ class RPS_Doc_UT1_Blacklist(RPSBase):  # noqa
         self._ut1_mapping = load_bad_urls_index_tr(Path(bad_urls_file))
 
     def __call__(self, document: Document) -> SignalType:
-        score: int = self._ut1_mapping.get(document.domain, None)
+        score: int = self._ut1_mapping.get(document.domain, 0)
         return [(0, len(document), score)]
 
 
