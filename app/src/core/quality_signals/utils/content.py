@@ -10,6 +10,13 @@ def load_bad_urls_index(bad_urls_dir: Path) -> Dict[str, int]:
         domain_to_category_id = json.load(f)
     return domain_to_category_id
 
+def load_bad_urls_index_tr(bad_urls_file: Path) -> Dict[str, int]:
+    domain_to_category_id = {}
+    with open(bad_urls_file, "r") as f:
+        for i, line in enumerate(f):
+            domain, category = line.strip().split(",")  # Assuming comma separation
+            domain_to_category_id[domain] = int(category)  # Assuming category is an integer
+    return domain_to_category_id
 
 def load_bad_words(bad_words_dir: Path, lang: str) -> Set[str]:
     r""" load the LDNOOBW word list for a given language
