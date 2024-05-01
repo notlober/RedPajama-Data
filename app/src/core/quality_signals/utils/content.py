@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Dict, Set
 
-_DEFAULT_LANGS = ("en", "fr", "it", "es", "de")
+_DEFAULT_LANGS = ("en", "fr", "it", "es", "de", "tr")
 
 
 def load_bad_urls_index(bad_urls_dir: Path) -> Dict[str, int]:
@@ -25,6 +25,11 @@ def load_bad_words(bad_words_dir: Path, lang: str) -> Set[str]:
     Returns:
         A set of words
     """
+    if lang == "tr":
+        with open(bad_words_dir / f"{lang}.json", "r") as f:
+            data = json.load(f)
+            return set(data["bad_words"])
+
     if lang not in _DEFAULT_LANGS:
         return set()
 
