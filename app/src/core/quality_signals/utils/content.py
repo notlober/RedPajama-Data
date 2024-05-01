@@ -35,7 +35,8 @@ def load_bad_words(bad_words_dir: Path, lang: str) -> Set[str]:
     if lang == "tr":
         with open(bad_words_dir / f"{lang}.json", "r") as f:
             data = json.load(f)
-            return set(data["bad_words"])
+            bad_words_list = data["bad_words"]  # Access the "bad_words" key
+            return set(bad_words_list)  # Convert the list to a set
 
     if lang not in _DEFAULT_LANGS:
         return set()
