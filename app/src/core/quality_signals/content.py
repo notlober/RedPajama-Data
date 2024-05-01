@@ -155,7 +155,7 @@ class RPS_Doc_UT1_Blacklist(RPSBase):  # noqa
     """
     __slots__ = ["_ut1_mapping"]
 
-    def __init__(self, bad_urls_dir: str, *args, **kwargs):  # noqa
+    def __init__(self, bad_urls_file: str, *args, **kwargs):  # noqa
         super(RPS_Doc_UT1_Blacklist, self).__init__()
         self._ut1_mapping = load_bad_urls_index_tr(Path(bad_urls_file))
 
