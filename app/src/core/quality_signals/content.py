@@ -149,7 +149,6 @@ class RPS_Doc_Curly_Bracket(RPSBase):  # noqa
 
         return [(0, len(document), score)]
 
-
 class RPS_Doc_UT1_Blacklist(RPSBase):  # noqa
     r""" An categorical id of the list of categories of the domain of the
     document. Categories are obtained from the UT1 blacklist.
@@ -158,7 +157,7 @@ class RPS_Doc_UT1_Blacklist(RPSBase):  # noqa
 
     def __init__(self, bad_urls_dir: str, *args, **kwargs):  # noqa
         super(RPS_Doc_UT1_Blacklist, self).__init__()
-        self._ut1_mapping = load_bad_urls_index(Path(bad_urls_dir))
+        self._ut1_mapping = load_bad_urls_index_tr(Path(bad_urls_file))
 
     def __call__(self, document: Document) -> SignalType:
         score: int = self._ut1_mapping.get(document.domain, None)
