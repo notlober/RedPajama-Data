@@ -118,7 +118,11 @@ class RPS_Doc_Frac_Lines_End_With_Ellipsis(RPSBase):  # noqa
 class RPS_Doc_Frac_No_Alph_Words(RPSBase):  # noqa
     r""" The fraction of words that contain no alphabetical character.
     This is based on the raw content. """
-    ALPH_REGEX = re.compile(r"[a-zA-Z]")
+    # Original regex for English alphabet
+    # ALPH_REGEX = re.compile(r"[a-zA-Z]")
+
+    # Modified regex for Turkish alphabet (including some additional special characters)
+    ALPH_REGEX = re.compile(r"[a-zA-ZçÇğĞıİöÖşŞüÜ]") 
 
     __slots__ = ()
 
