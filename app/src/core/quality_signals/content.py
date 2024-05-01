@@ -39,7 +39,7 @@ def register_content_callables(
     return list(map(
         lambda cls: cls(
             language=language,
-            bad_urls_dir=bad_urls_dir,
+            bad_urls_file=bad_urls_dir,
             bad_words_dir=bad_words_dir
         ),
         get_callables_from_module(module=sys.modules[__name__])
