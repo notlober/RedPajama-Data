@@ -10,7 +10,7 @@ from core.quality_signals.utils.stop_words import get_stop_words
 from core.document import Document
 from core.data_types import SignalType
 from core.quality_signals.utils.content import \
-    load_bad_words, load_bad_urls_index
+    load_bad_words, load_bad_urls_index, load_bad_urls_index_tr
 from utilities.register.registry_utils import *
 from utilities.text import form_ngrams
 
