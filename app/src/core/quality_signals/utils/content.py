@@ -14,8 +14,8 @@ def load_bad_urls_index_tr(bad_urls_file: Path) -> Dict[str, int]:
     domain_to_category_id = {}
     with open(bad_urls_file, "r") as f:
         for i, line in enumerate(f):
-            domain, category = line.strip()  # Assuming comma separation
-            domain_to_category_id[domain] = int(category)  # Assuming category is an integer
+            domain = line.strip()  # Extract the domain directly 
+            domain_to_category_id[domain] = i  # Assign a unique category ID
     return domain_to_category_id
 
 def load_bad_words(bad_words_dir: Path, lang: str) -> Set[str]:
