@@ -33,9 +33,9 @@ def load_bad_words(bad_words_dir: Path, lang: str) -> Set[str]:
         A set of words
     """
     if lang == "tr":
-        with open(bad_words_dir / f"{lang}.json", "r") as f:
-            data = json.load(f)  # data is already the list of stop words
-            return set(data)  # Directly convert the list to a set
+        with open(bad_words_dir / f"{lang}.txt", "r") as f:  # Load from tr.txt
+            data = f.readlines()
+            return set(line.strip() for line in data)  # Strip newlines
 
     if lang not in _DEFAULT_LANGS:
         return set()
