@@ -44,5 +44,6 @@ RP_SIGNAL_SCHEMA = [
     ("id", str),
     ("id_int", int),
     ("metadata", METADATA_SCHEMA),
-    ("quality_signals", QUALITY_SIGNALS_SCHEMA)
+    ("quality_signals", QUALITY_SIGNALS_SCHEMA),
+    ("raw_content", str),  # Add the raw_content field
 ]
