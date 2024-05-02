@@ -46,4 +46,6 @@ RP_SIGNAL_SCHEMA = [
     ("metadata", METADATA_SCHEMA),
     ("quality_signals", QUALITY_SIGNALS_SCHEMA),
     ("raw_content", str),  # Add the raw_content field
+    ("doc_id", str),  # Add the doc_id field
+
 ]
